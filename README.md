@@ -2,7 +2,6 @@
 
 > A Vue + H5Plus project
 
-使用UI : [Muse-UI](https://museui.github.io/) 基于 Vue 2.0 和 Material Desigin 的 UI 组件库
 真机调试 : [HBuilder](http://www.dcloud.io/) HBuilder-飞速编码的极客工具
 
 关键字：
@@ -29,17 +28,4 @@ npm run dev
 npm run build
 ## 然后把 dist 文件下的目录放入 HBuilder 项目中
 ## 设置起始页为 module/index.html 真机调试
-```
-扫描二维码
-在流应用中快速预览
-![测试二维码](https://github.com/NewsNIng/vue-h5plus/raw/master/other/liu.png)
-
-## 部分截图
-
-![主页](https://github.com/NewsNIng/vue-h5plus/raw/master/other/1.jpg)
-
-![机器人聊天](https://github.com/NewsNIng/vue-h5plus/raw/master/other/chat.png)
-
-![侧栏](https://github.com/NewsNIng/vue-h5plus/raw/master/other/2.jpg)
-
-![其它](https://github.com/NewsNIng/vue-h5plus/raw/master/other/3.jpg)
+ 
