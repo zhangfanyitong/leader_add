@@ -14,7 +14,8 @@
         <div class="botright_l"></div>
       </div>
     </div>
-    <div class="cengdiv">
+    <!-- 数据 -->
+    <div class="cengdiv" v-if="echartsShow == 0">
       <div class="gwybl texioneline"><span id="place_name">全国公务员</span><span class=""></span></div>
       <div class="gwybl"><span id="all_num">651651人</span></div>
       <div class="nvsfdiv">
@@ -30,7 +31,10 @@
         </ul>
       </div>
     </div>
+    <!-- 图标 -->
+    <div class="cengdiv" v-if="echartsShow == 1">
 
+    </div>
   </div>
 </template>
 <script>
@@ -38,7 +42,13 @@
     leaderData
   } from '../../common/js/leaderEcharts/leaderDataConfig.js';
   export default {
-    name: 'hello',
+    props: {
+      echartsShow: {
+        type: String,
+        default:" 0"
+      }
+    },
+
     data() {
       return {
         leaderData: leaderData
@@ -73,21 +83,22 @@
     height: 100%;
     background: url(../../../static/image/k_c_right.png) repeat-y right;
   }
-   .bj {
+
+  .bj {
     position: relative;
     z-index: 2;
     width: 100%;
     height: 100%;
   }
-  
-   .bj .topleft_l {
+
+  .bj .topleft_l {
     float: left;
     width: 74px;
     height: 147px;
     background: url(../../../static/image/k_t_left.png) no-repeat left top;
   }
-  
-   .bj .topright_l {
+
+  .bj .topright_l {
     position: absolute;
     right: 0px;
     top: 0px;
@@ -95,23 +106,23 @@
     height: 147px;
     background: url(../../../static/image/k_t_right.png) no-repeat right top;
   }
-  
-   .bj .topcenter_l {
+
+  .bj .topcenter_l {
     margin-left: 74px;
     width: auto;
     margin-right: 49px;
     height: 147px;
     background: url(../../../static/image/k_t_center.png) repeat-x top;
   }
-  
-   .bj .botleft_l {
+
+  .bj .botleft_l {
     float: left;
     width: 74px;
     height: 43px;
     background: url(../../../static/image/k_b_left.png) no-repeat left bottom;
   }
-  
-    .bj .botright_l {
+
+  .bj .botright_l {
     position: absolute;
     right: 0px;
     bottom: 0px;
@@ -119,15 +130,15 @@
     height: 43px;
     background: url(../../../static/image/k_b_right.png) no-repeat right bottom;
   }
-  
-   .bj .botcenter_l {
+
+  .bj .botcenter_l {
     margin-left: 74px;
     width: auto;
     margin-right: 49px;
     height: 43px;
     background: url(../../../static/image/k_b_center.png) repeat-x bottom;
   }
-  
+
   .bj .footleft {
     position: absolute;
     bottom: 0px;

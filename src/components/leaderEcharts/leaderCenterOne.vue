@@ -7,7 +7,7 @@
       <div class="middle_tab" :class="leaderData.tabSwitch.centerOneSwitch==3?'tips':''" @click="leaderData.tabSwitch.centerOneSwitch=3">行政单位</div>
     </div>
     <!--行政单位-->
-    <div   v-show="leaderData.tabSwitch.centerOneSwitch==3" class="setTabDiv">
+    <div v-show="leaderData.tabSwitch.centerOneSwitch==3" class="setTabDiv">
       <div class="xuanzetab weixzh " id="xuanzetab" style="z-index: 99">
         <span>人员总数</span><em id="tanktuli">&nbsp;</em>
       </div>
@@ -45,14 +45,9 @@
 
     </div>
     <!--中央单位-->
-    <div  v-show="leaderData.tabSwitch.centerOneSwitch==2" class="setTabDiv">
-      <div class="top_ygdanwei  ">
+    <div v-show="leaderData.tabSwitch.centerOneSwitch==2" class="setTabDiv">
+      <div class="top_ygdanwei">
         <div class="renxuanze">
-          <div class="line">
-            <div class="leftj"></div>
-            <div class="xuanzj">&nbsp;</div>
-            <div class="rightj"></div>
-          </div>
           <ul id="dw-top-content" class="myxx">
             <li>
               <a href="#"> 中央单位:</a>
@@ -76,7 +71,7 @@
       </div>
     </div>
     <!-- 全国 -->
-    <div  v-show="leaderData.tabSwitch.centerOneSwitch==1" style="position: relative; height: 100%;">
+    <div v-show="leaderData.tabSwitch.centerOneSwitch==1" style="position: relative; height: 100%;">
       <div class="danweihz1 danweihz3">
         <ul>
           <li v-for="(item) in leaderData.allCountry " :class="item.liClass">
@@ -99,7 +94,7 @@
     leaderData
   } from '../../common/js/leaderEcharts/leaderDataConfig.js';
   export default {
-    name: 'hello',
+
     data() {
       return {
         leaderData: leaderData
@@ -199,6 +194,7 @@
     background: url(../../../static/image/tankatopr.png) no-repeat right top;
     text-align: right;
   }
+
   .xuanzetank .centercont {
     border: 1px solid #3270FF;
     border-top: 0px;
@@ -209,6 +205,7 @@
     overflow: hidden;
     margin-right: 14px;
   }
+
   .tucan ul {
     margin: 0px;
     padding: 0px;
@@ -238,9 +235,11 @@
     color: #fff;
     cursor: pointer;
   }
+
   .nomg {
     margin: 0px;
   }
+
   .mapwapper .mapbj {
     position: absolute;
     width: 100%;
@@ -254,6 +253,7 @@
     width: 100%;
     height: 100%;
   }
+
   .top_ygdanwei {
     width: 100%;
     height: 36px;
@@ -263,49 +263,19 @@
     z-index: 93;
     font-size: .6rem;
   }
+
   .renxuanze {
     margin: 4px auto 8px;
     width: 100%;
-    height: 35px;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    font-size: 1rem;
     position: relative;
   }
-
-  .renxuanze .line {
-    position: absolute;
-    bottom: 0px;
-    height: 1px;
-    line-height: 1px;
-    width: 100%;
-    background: #1C3884;
-    z-index: -2;
-  }
-
-  .renxuanze .leftj {
-    position: absolute;
-    left: 0px;
-    height: 6px;
-    bottom: -3px;
-    width: 6px;
-    border-radius: 3px;
-    background: #1C3884;
-    z-index: -1;
-  }
-
-  .renxuanze .rightj {
-    position: absolute;
-    right: 0px;
-    height: 6px;
-    bottom: -3px;
-    width: 6px;
-    border-radius: 3px;
-    background: #1C3884;
-    z-index: -1;
-  }
-
   .renxuanze ul {
     width: 100%;
     padding: 0 10px;
-    height: 35px;
+    height: 100%;
     margin: 0px;
   }
 
@@ -313,7 +283,7 @@
     float: left;
     display: inline-block;
     width: auto;
-    line-height: 33px;
+
     padding: 0 15px 0 0px;
     margin: 0 1px;
     background: url(../../../static/image/ren/jiantou.png) no-repeat right center;
@@ -336,34 +306,6 @@
     display: inline-block;
   }
 
-
-  .renxuanze ul span {
-    display: inline-block;
-    height: 30px;
-    margin: 0 8px;
-    border: 1px solid #050E58;
-    line-height: 28px;
-    padding: 0 15px 0px 5px;
-    background: url(../../../static/image/gb.png) no-repeat right 7px;
-  }
-
-  .renxuanze ul span:hover {
-    border: 1px solid #1B3788;
-    cursor: pointer;
-    background-position: right -13px;
-  }
-
-  .renxuanze ul span em {
-    display: inline-block;
-    margin: 0 5px;
-  }
-
-  .renxuanze .sousou {
-    position: absolute;
-    right: 4px;
-    top: 0px;
-    width: auto;
-  }
   .danweihz1 {
     width: 100%;
     position: relative;
@@ -372,6 +314,7 @@
     overflow: hidden;
     z-index: 33;
   }
+
   .danweihz1 ul {
     padding: 0px;
     margin: 0px;
@@ -403,7 +346,7 @@
   .danweihz1 ul li p {
     display: inline-block;
     width: 100%;
-    height:100%;
+    height: 100%;
     line-height: 18px;
     font-size: .5rem;
     text-align: center;
@@ -443,7 +386,7 @@
     position: relative;
     text-align: left;
     text-indent: .6rem;
-  font-size: 0.8rem;
+    font-size: 0.8rem;
 
     display: block;
     top: 0px;
@@ -462,6 +405,7 @@
     /* text-indent:10px;*/
     font-size: 1rem !important;
   }
+
   .danweihz3 {
     width: 100%;
     position: relative;
@@ -470,6 +414,7 @@
     overflow: hidden;
     z-index: 33;
   }
+
   .buchbiao {
     width: 100%;
     height: 100%;
@@ -482,6 +427,7 @@
     padding-right: 8px;
     padding-bottom: 8px;
   }
+
   .neicon {
     width: 100%;
     height: 100%;
@@ -493,6 +439,7 @@
     border-color: rgba(32, 62, 171, 0.8);
     background-color: rgba(1, 25, 91, 0.5);
   }
+
   .buchbiao3 {
     padding-top: 11.2rem;
   }

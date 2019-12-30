@@ -189,9 +189,7 @@
   	text-align: center;
   	width: 95%;
   	margin: 0 auto;
-  	 
   	font-size: 1rem;
-  	 
   	color: #A8CEF4;
   }
   .tubiaocont {
@@ -229,7 +227,7 @@
   	border-right: 1px solid #11234F;
   	border-bottom: 1px solid #11234F;
   	text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   	padding: 0.1rem 3px;
   }
 

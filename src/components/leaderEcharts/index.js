@@ -6,3 +6,4 @@ export {default as leaderRightOne } from './leaderRightOne.vue';
 export {default as leaderRightTwo } from './leaderRightTwo.vue';
 export {default as unitCenterOne } from './unitCenterOne.vue';
 export {default as unitTableList } from './unitTableList.vue';
+export {default as leaderCrumbs } from './leaderCrumbs.vue';

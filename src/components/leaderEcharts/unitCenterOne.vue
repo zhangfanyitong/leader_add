@@ -140,9 +140,9 @@
     text-align: center;
     width: 95%;
     margin: 0 auto;
-    height: 1.2rem;
-    font-size: .6rem;
-    line-height: 1rem;
+
+    font-size: 1rem;
+   
     color: #A8CEF4;
   }
 </style>

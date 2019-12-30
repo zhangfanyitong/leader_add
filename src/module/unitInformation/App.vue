@@ -4,23 +4,7 @@
       <!--顶部的填报单位 -->
       <div class="unit-top">
         <!--面包屑 -->
-        <ul class="unit-crumbsBox">
-          <li class="unit-crumbsItem">
-            <a id="top-name-message-content">填报单位</a>
-          </li>
-          <li class="unit-crumbsItem">
-            <a id="top-name-message-content">公安机关</a>
-          </li>
-          <li class="unit-crumbsItem">
-            <a id="top-name-message-content">检查为机关</a>
-          </li>
-        </ul>
-        <!-- 底部的区别线 -->
-        <div class="unit-line">
-          <div class="unit-leftj"></div>
-          <div class="unit-xuanzj"></div>
-          <div class="unit-rightj"></div>
-        </div>
+       <leader-crumbs></leader-crumbs>
       </div>
       <!--图标区域 -->
       <div class="unit-echartsBox">
@@ -28,7 +12,7 @@
         <div class="unit-echartsLeft">
           <!-- 左一 -->
           <div class="unit-leftOne">
-            <leader-left-one></leader-left-one>
+            <leader-left-one :echartsShow="1"></leader-left-one>
           </div>
           <!-- 左二 -->
           <div class="unit-leftTwo">
@@ -77,8 +61,10 @@
     leaderRightOne,
     leaderRightTwo,
     unitCenterOne,
-    unitTableList
+    unitTableList,
+    leaderCrumbs
   } from '../../components/leaderEcharts';
+
   export default {
     components: {
       leaderLeftOne,
@@ -87,7 +73,8 @@
       leaderRightOne,
       leaderRightTwo,
       unitCenterOne,
-      unitTableList
+      unitTableList,
+      leaderCrumbs
     },
     data() {
       return {}

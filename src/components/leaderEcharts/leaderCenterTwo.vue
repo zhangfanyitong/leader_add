@@ -173,9 +173,9 @@
     text-align: center;
     width: 95%;
     margin: 0 auto;
-    height: 23px;
+    
     font-size: 1rem;
-    line-height: 23px;
+ 
     color: #A8CEF4;
     padding-bottom: 5px
   }

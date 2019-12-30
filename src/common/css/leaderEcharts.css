@@ -1633,10 +1633,10 @@ a:hover {
   overflow: hidden;
 }
 
-.renxuanze {
+/* .renxuanze {
   margin: 4px auto 8px;
   width: 100%;
-  height: 35px;
+
   position: relative;
 }
 
@@ -1699,18 +1699,17 @@ a:hover {
   background: none;
   padding: 0 15px 0 2px;
 }
+ */
+/* .renxuanze ul li.fist {
 
-.renxuanze ul li.fist {
-
-  /* background: url(../../../static/image/ren/gen.png) no-repeat 0px center; */
   width: 30px;
   display: inline-block;
-}
+} */
 
 /*.renxuanze ul li.fist:hover{background: url(../../../static/image/ren/genh.png) no-repeat 0px center; }*/
 /*.renxuanze ul li.active{ background:#0F1D41 url(../../../static/image/ren/jiantouh.png) no-repeat right center; border:1px solid #204199; border-bottom:0px; height:34px; position:relative; z-index:35;}*/
 /*.renxuanze ul li:first-child.active{background:#0F1D41 url(../../../static/image/ren/genh.png) no-repeat 0px center !important;}*/
-.renxuanze ul span {
+/* .renxuanze ul span {
   display: inline-block;
   height: 30px;
   margin: 0 8px;
@@ -1736,7 +1735,7 @@ a:hover {
   right: 4px;
   top: 0px;
   width: auto;
-}
+} */
 
 .sousou .skang {
   width: auto;
