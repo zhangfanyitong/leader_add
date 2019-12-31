@@ -21,10 +21,10 @@
         <h1 v-show="leaderData.tabSwitch.rightOne==1">各职务层次分布</h1>
         <h1 v-show="leaderData.tabSwitch.rightOne==2">各职务层次年龄占比</h1>
         <!-- echarts -->
-        <div v-show="leaderData.tabSwitch.rightOne==1" id="cont_gzwccnlzb" class="cont_one tubiaocont" style="">
+        <div v-show="leaderData.tabSwitch.rightOne==1" id="cont_gzwccnlzb" class="cont_one tubiaocont" style="overflow:visible;">
 
         </div>
-        <div v-show="leaderData.tabSwitch.rightOne==2" id="cont_gzwccnlzb1" class="cont_one tubiaocont" style="">
+        <div v-show="leaderData.tabSwitch.rightOne==2" id="cont_gzwccnlzb1" class="cont_one tubiaocont" style="overflow:visible;">
 
         </div>
       </div>
@@ -56,7 +56,7 @@
 <style scoped>
     .bj {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }

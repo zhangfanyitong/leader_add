@@ -22,7 +22,7 @@
         <div class="centercont">
           <div class="tucan nomg">
             <ul id="xuanze_item">
-              <li id="first" data-type="all" class="tips">人员总数</li>
+              <li id="first" data-type="a ll" class="tips">人员总数</li>
               <li data-type="age_gt_35">35岁以上</li>
               <li data-type="xueli_gt_benke">本科及以上</li>
               <li data-type="jibie_gt_xianchuji">县处级及以上</li>
@@ -39,7 +39,7 @@
       <div class="mapbj" id="sixthPlot">
         <!--地图位置-->
         <div id="container-mid-top" style="  height:100%;padding-left: 18px;z-index: 80">
-
+            <chinaMap></chinaMap>
         </div>
       </div>
 
@@ -93,9 +93,13 @@
   import {
     leaderData
   } from '../../common/js/leaderEcharts/leaderDataConfig.js';
+  import chinaMap from '../chinaMap.vue';
   export default {
-
+	components:{
+    chinaMap
+  },
     data() {
+
       return {
         leaderData: leaderData
       }
@@ -433,7 +437,7 @@
     height: 100%;
     padding: 10px;
     position: relative;
-    z-index: 2;
+    z-index: 1;
     border-width: 1px;
     border-style: solid;
     border-color: rgba(32, 62, 171, 0.8);

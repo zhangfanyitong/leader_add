@@ -1,3 +1,5 @@
+
+// http://1.0.7.113:8080/module/index.html  网络地址
 {
     "@platforms" : [ "android", "iPhone", "iPad" ],
     "id" : "H52ECB0D6", /*应用的标识，创建应用时自动生成，勿手动修改*/

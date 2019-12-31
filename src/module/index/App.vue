@@ -1,7 +1,7 @@
 <template>
   <div class="body-box">
     <!-- <img src="image/startBack.gif" style="height: 100%;width: 100%;" v-show="indexImg==1" > -->
-    <header id="header" class="bg-top" @click="openLeader()">
+    <header id="header" class="bg-top">
       <img src="../../../static/image/logo.png" class="index-logo" />
       <nav id="tab" class="index-menu">
         <a v-for="(item,index) in tabs" class="meun-item" :class="clickMenu== index ?'tips':''" @click="urlMenuItem(index,item.src)">

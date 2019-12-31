@@ -18,7 +18,7 @@
       <div class="div_xueli">
         <h1>任现职层次年限信息</h1>
         <!--  echarts -->
-        <div id="container-right-bottom" class="tubiaocont">
+        <div id="container-right-bottom" class="tubiaocont" style="overflow:visible;">
 
         </div>
       </div>
@@ -26,25 +26,25 @@
         <div class="tab-itemBox" :class="leaderData.tabSwitch.rightTwo==1?'tab-tips':''" @click="leaderData.tabSwitch.rightTwo=1">
           综合
         </div>
-        <div class="tab-itemBox  " :class="leaderData.tabSwitch.rightTwo==2?'tab-tips':''" @click="leaderData.tabSwitch.rightTwo=2">
+        <div class="tab-itemBox" :class="leaderData.tabSwitch.rightTwo==2?'tab-tips':''" @click="leaderData.tabSwitch.rightTwo=2">
           警察
         </div>
-        <div class="tab-itemBox  " :class="leaderData.tabSwitch.rightTwo==3?'tab-tips':''" @click="leaderData.tabSwitch.rightTwo=3">
+        <div class="tab-itemBox" :class="leaderData.tabSwitch.rightTwo==3?'tab-tips':''" @click="leaderData.tabSwitch.rightTwo=3">
           法检
         </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
   let echarts = require('echarts/lib/echarts');
   // 引入柱状图组件
-  require('echarts/lib/chart/bar')
+  require('echarts/lib/chart/bar');
+  require("echarts/lib/component/legend");
   // 引入提示框和title组件
-  require('echarts/lib/component/tooltip')
-  require('echarts/lib/component/title')
+  require('echarts/lib/component/tooltip');
+  require('echarts/lib/component/title');
   import {
     leaderData
   } from '../../common/js/leaderEcharts/leaderDataConfig.js';
@@ -59,99 +59,176 @@
       this.drawLine();
     },
     methods: {
-      drawLine() {
+      drawLine(legendArry,itemId,itemColorArry,xDataArry,yDataArry,echartsDataArry) {
+        echartsDataArry=[['100', "33.33", "11.47", '20.17', "27.97", '11.32'],['0', "0", "4.91", '8.01', "6.21", '28.30'],['0', "0", "4.91", '8.01', "6.21", '28.30'],['0', "0", "4.91", '8.01', "6.21", '28.30'],['0', "0", "4.91", '8.01', "6.21", '28.30'],['0', "0", "4.91", '8.01', "6.21", '28.30']]
+        
+        echartsDataArry.forEach()
+        
+        var legend_array = ['不满2年', '2年至不满3年', '3年至不满4年', '4年至不满5年', '5年至不满6年', '6年及以上']
         // 基于准备好的dom，初始化echarts实例
         let myChart = echarts.init(document.getElementById('container-right-bottom'))
         // 绘制图表
         myChart.setOption({
-          tooltip: {
+          color: ['#7F11C1', '#A820C6', '#C95AE4', '#0083C1', '#3270FF', '#0045DF'],
+          tooltip: { //提示框组件，当
             trigger: 'axis',
-            axisPointer: { // 坐标轴指示器，坐标轴触发有效
-              type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-            }
+            axisPointer: {
+              type: 'shadow'
+            },
+            show: true,
+            confine: false
           },
-          legend: {
-            data: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎'],
-            top: "20%",
-            left: "10%",
+          legend: { //图例对象
+            data: legend_array,
+            itemGap: 3,
+            left: '8%',
             right: '10%',
+            top:  0,
+            itemHeight: 8, //图例图形高度
+            itemWidth: 12, //图例图形宽度
             textStyle: {
-              fontSize: 5
+              color: '#C1C1E4',
+              fontSize: 8
             }
           },
-          grid: {
-            left: '10%',
-            right: '10%',
-            bottom: '15%',
+          grid: { //边距
+            top: 40, //距离容器上边界40像素
+            bottom: 0, //距离容器下边界30像素
+            left: 0,
+            right: 10,
             containLabel: true
           },
           xAxis: {
-            type: 'value'
+            type: 'value',
+            nameTextStyle: {
+              fontSize: 8
+            },
+            axisLine: {
+              lineStyle: {
+                color: '#0087ED',
+                width: 1
+              }
+            },
+            min: 0,
+            max: 100,
+            axisLabel: { //坐标轴刻度标签的相关设置
+              interval: 'auto', //刻度标签的间隔
+              formatter: '{value}%', //刻度标签的内容格式
+              fontSize: 8 //控制x轴字体的大小
+            },
+            splitLine: {
+              show: false
+            },
+            axisTick: {
+              show: true,
+              length: 3,
+              lineStyle: {
+                opacity: 0.5
+              }
+            },
+            show: true
           },
           yAxis: {
             type: 'category',
-            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+            data: ["科员及其他", "副科", "正科", "副处", "正处", "副厅"],
+            axisLine: {
+              lineStyle: {
+                color: '#0087ED',
+                width: 1
+              }
+            },
+            axisTick: {
+              show: true,
+              length: 3,
+              lineStyle: {
+                opacity: 0.5
+              }
+            },
+            splitLine: {
+              show: false
+            },
+            axisLabel: {
+              interval: 0,
+              rotate: 0, //字体倾斜角度
+              fontSize: 8 // 让字体变大
+            }
           },
           series: [{
-              name: '直接访问',
+              name: legend_array[0],
               type: 'bar',
-              barWidth: '15',
               stack: '总量',
+              barWidth: 12,
               label: {
                 normal: {
-                  show: true,
                   position: 'insideRight'
                 }
               },
-              data: [320, 302, 301, 334, 390, 330, 320]
+              data: ['100', "33.33", "11.47", '20.17', "27.97", '11.32'],
+              z: 10
             },
             {
-              name: '邮件营销',
+              name: legend_array[1],
               type: 'bar',
               stack: '总量',
               label: {
                 normal: {
-                  show: true,
                   position: 'insideRight'
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: ['0', "0", "4.91", '8.01', "6.21", '28.30'],
+              z: 10
             },
             {
-              name: '联盟广告',
+              name: legend_array[2],
               type: 'bar',
               stack: '总量',
               label: {
                 normal: {
-                  show: true,
                   position: 'insideRight'
                 }
               },
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: ['0', "11.11", "3.27", '19.58', "53.88", '16.98'],
+              z: 10
             },
             {
-              name: '视频广告',
+              name: legend_array[3],
               type: 'bar',
               stack: '总量',
               label: {
                 normal: {
-                  show: true,
                   position: 'insideRight'
                 }
               },
-              data: [150, 212, 201, 154, 190, 330, 410]
+              data: ['0', "0", "1.67", '4.15', "4.55", '3.77'],
+              z: 10
             },
             {
-              name: '搜索引擎',
+              name: legend_array[4],
               type: 'bar',
               stack: '总量',
               label: {
                 normal: {
-                  show: true,
+
                   position: 'insideRight'
                 }
               },
-              data: [820, 832, 901, 934, 1290, 1330, 1320]
+              data: ['0', "0", "1.67", '4.15', "4.55", '3.77'],
+              z: 10
+
+            },
+            {
+              name: legend_array[5],
+              type: 'bar',
+              stack: '总量',
+              label: {
+                normal: {
+
+                  position: 'insideRight'
+                }
+              },
+              data: ['0', "0", "1.67", '4.15', "4.55", '3.77'],
+              z: 10
+
             }
           ]
         });
@@ -164,7 +241,7 @@
 <style scoped>
   .bj {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }
@@ -294,12 +371,6 @@
 
   .tubiaocont {
     width: 100%;
-    height: 100%;
-    padding-top: 1rem;
-    /* padding: 30px 12px 22px; */
-    position: absolute;
-    top: 0px;
-    z-index: 13;
-    left: 0px;
+    height: calc(100% - 1rem);
   }
 </style>

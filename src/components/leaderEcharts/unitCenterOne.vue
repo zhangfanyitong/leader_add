@@ -16,12 +16,20 @@
     </div>
     <div class="cengdiv" id="lxstyle-message-content">
       <h1>填报机构及人员概况</h1>
+      
     </div>
 
   </div>
 </template>
 
 <script>
+ 
+  export default ({
+    
+    data() {
+      return {}
+    },
+  })
 </script>
 
 <style scoped>
@@ -35,7 +43,7 @@
 
   .bj {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     height: 100%;
   }
@@ -142,7 +150,7 @@
     margin: 0 auto;
 
     font-size: 1rem;
-   
+
     color: #A8CEF4;
   }
 </style>

@@ -17,7 +17,8 @@
         <!--中间部分-->
         <div class="center" id="centerBox">
           <!-- 中间的上部分 -->
-          <div class="mapwapper" id="centerOne">
+          <div class="mapwapper" id="cente
+          rOne">
             <leader-center-one></leader-center-one>
           </div>
 
@@ -46,7 +47,7 @@
 </template>
 <script>
   // 按需引入组件
- 
+
   import {
     leaderLeftOne,
     leaderLeftTwo,
@@ -55,6 +56,7 @@
     leaderRightOne,
     leaderRightTwo
   } from '../../components/leaderEcharts';
+
   import {
     domReady,
     plusReady
